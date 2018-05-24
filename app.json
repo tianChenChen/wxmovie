@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "views/index/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#3fcafa",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "电影",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "white",
+    "enablePullDownRefresh": false
+  }
+}

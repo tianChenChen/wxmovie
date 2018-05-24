@@ -1,0 +1,14 @@
+<!--views/index/index.wxml-->
+<scroll-view scroll-x="true">
+  <view class='nav'>
+    <rich-text class='nav-item' wx:for="{{year}}" wx:key="index">{{item}}</rich-text>
+  </view>
+</scroll-view>
+
+
+<scroll-view scroll-y="true" style='height:100%;' >
+  <view class='movie-list'>
+   <image src=''></image>
+   <text>moonlight<text>导演</text></text>
+  </view>
+</scroll-view>

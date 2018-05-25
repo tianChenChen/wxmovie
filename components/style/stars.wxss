@@ -1,0 +1,20 @@
+/* views/index/index.wxss */
+.rankcontauber{
+  display: flex;
+  flex-direction: row;
+}
+.rankstarts{
+  display: flex;
+  flex-direction: row;
+  height: 25rpx;
+  margin-right:6rpx;
+  margin-top: 12rpx;
+}
+.starimg{
+  padding-left:3rpx;
+  height:30rpx;
+  width:30rpx;
+}
+.rankscore{
+  font-size:30rpx;
+}

@@ -1,4 +1,6 @@
 <!--views/index/index.wxml-->
+<import src="/components/template/stars.wxml"/>
+
 <scroll-view scroll-x="true">
   <view class='nav'>
     <rich-text class='nav-item' wx:for="{{year}}" wx:key="index">{{item}}</rich-text>
@@ -8,7 +10,11 @@
 
 <scroll-view scroll-y="true" style='height:100%;' >
   <view class='movie-list'>
-   <image src=''></image>
-   <text>moonlight<text>导演</text></text>
+   <image class='movie-list-img' src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2513360824.jpg'></image>
+   <view class='movie-content'>
+    <text class='title'>您好您好</text>
+    <text class='futitle'>导演</text>
+    <template is="stars" data="{{starScore}}" />
+   </view>
   </view>
 </scroll-view>

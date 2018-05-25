@@ -1,0 +1,11 @@
+<template name="stars">
+  <view class='rankcontauber'>
+    <block wx:for="{{[2,4,6,8,10]}}" wx:for-item="item" class='rankstarts'>
+      <image wx:if="{{item > starScore + 1}}" class='starimg' src='/assets/images/stargray.png'></image>
+      <image wx:elif="{{item === starScore + 1}}" class='starimg' src='/assets/images/starnormal.png'></image>
+      <image wx:else="{{item <= starScore + 1}}" class='starimg' src='/assets/images/star.png'></image>
+      <!-- <image class='starimg' src='/assets/images/star.png'></image>
+      <image class='starimg' src='/assets/images/star.png'></image> -->
+    </block>
+  </view>
+</template>

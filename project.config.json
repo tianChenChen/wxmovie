@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
 	"appid": "wxcf451d2526783819",
-	"projectname": "%E7%94%B5%E5%BD%B1%E8%AE%BE%E8%AE%A1%E7%89%88%E6%9C%AC1",
+	"projectname": "电影",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

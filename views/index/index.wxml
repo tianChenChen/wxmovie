@@ -17,4 +17,14 @@
     <template is="stars" data="{{starScore}}" />
    </view>
   </view>
+
+  <view class='movie-list'>
+   <image class='movie-list-img' src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2513360824.jpg'></image>
+   <view class='movie-content'>
+    <text class='title'>您好您好</text>
+    <text class='futitle'>导演</text>
+    <template is="stars" data="{{starScore}}" />
+   </view>
+  </view>
+  
 </scroll-view>

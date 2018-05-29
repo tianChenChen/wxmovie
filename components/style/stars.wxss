@@ -2,6 +2,7 @@
 .rankcontauber{
   display: flex;
   flex-direction: row;
+  padding:15rpx 0;
 }
 .rankstarts{
   display: flex;

@@ -23,12 +23,13 @@ page{
 }
 
 .movie-list{
-  width:650rpx;
+  width:700rpx;
   height:250rpx;
-  margin-left:25rpx;
+  margin-left:35rpx;
   margin-top:50rpx;
   background: linear-gradient(to left, white, transparent);
   box-shadow: 1px 1px 3px #ece7f2;
+  position: relative;
 }
 .movie-list-img{
   width:210rpx;
@@ -36,6 +37,13 @@ page{
   border-radius: 10rpx;
   position: relative;
   top: -15rpx;
+}
+.move-time{
+  position: absolute;
+  left:20rpx;
+  bottom: 15rpx;
+  font-size:24rpx;
+  color: #999;
 }
 .movie-content{
   width:400rpx;
@@ -52,5 +60,16 @@ page{
   display: block;
   font-size:25rpx;
   color: #999;
-  padding:10rpx 0;
+  padding:15rpx 0;
+}
+.yy{
+  font-size:25rpx;
+}
+.loading {
+  text-align: center;
+  height:80rpx;
+  padding:20rpx;
+}
+.loading image{
+  height:100%;
 }

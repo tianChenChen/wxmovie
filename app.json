@@ -3,7 +3,7 @@
     "views/index/index"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#3fcafa",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "电影",
     "backgroundColor": "#fff",

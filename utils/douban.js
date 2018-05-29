@@ -27,6 +27,10 @@ function find(type, page = 1, count=20, search=''){
   return fetchApi(type, search ? Object.assign(params, {q: search}) : params).then(res => res.data)
 }
 
+function list(id, page) {
+  return fetchApi('search?tag=' + id + '&count=20&start=' + page).then(res => res.data)
+}
+
 /**
  * 获取单条类型的数据
  * @param   {Number} id  电影ID
@@ -36,4 +40,4 @@ function findOne(id){
   return fetchApi('subject/' + id).then(res => res.data)
 }
 
-module.exports = { find, findOne }
+module.exports = { find, findOne, list }

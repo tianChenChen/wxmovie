@@ -8,13 +8,18 @@
 </scroll-view>
 
 
-<scroll-view scroll-y="true" style='height:100%;' >
-  <view class='movie-list'>
-   <image class='movie-list-img' src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2513360824.jpg'></image>
+<scroll-view scroll-y="true" style='height:100%;' bindscrolltolower="scorllbottom">
+  <view class='movie-list' wx:for="{{movies}}" wx:key="item.id">
+   <image class='movie-list-img' src='{{item.images.small}}'></image>
+   <text class='move-time'>{{item.mainland_pubdate}}</text>
    <view class='movie-content'>
-    <text class='title'>您好您好</text>
-    <text class='futitle'>导演</text>
-    <template is="stars" data="{{starScore}}" />
+    <text class='title'>{{item.title}}</text>
+    <text class='futitle'>{{item.directors[0].name}}</text>
+    <template is="stars" data="{{starScore:item.rating.average}}" />
+    <text class='yy'>{{item.genres}}</text>
    </view>
+  </view>
+  <view class='loading' wx:if="{{loading}}">
+    <image src='/assets/loading/loading-bars.svg'></image>
   </view>
 </scroll-view>

@@ -19,7 +19,20 @@
     <text class='yy'>{{item.genres}}</text>
    </view>
   </view>
+<<<<<<< HEAD
   <view class='loading' wx:if="{{loading}}">
     <image src='/assets/loading/loading-bars.svg'></image>
   </view>
+=======
+
+  <view class='movie-list'>
+   <image class='movie-list-img' src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2513360824.jpg'></image>
+   <view class='movie-content'>
+    <text class='title'>您好您好</text>
+    <text class='futitle'>导演</text>
+    <template is="stars" data="{{starScore}}" />
+   </view>
+  </view>
+  
+>>>>>>> 80e6136b497f09ebb8556e6473ce36a8fc14fc0f
 </scroll-view>

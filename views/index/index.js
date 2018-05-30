@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    year: [2018,2017,2016,2015,2014,2013,2012,2011],
+    year: [],
+    thisYear: 2018,
     movies: [],
     start: 0,
     size: 20,
@@ -27,7 +28,7 @@ Page({
   },
   loadMovies() {
     this.setData({ loading: true })
-    return app.douban.list(2016, this.data.start).then(d => {
+    return app.douban.list(this.data.thisYear, this.data.start).then(d => {
       const data = d.subjects
       const movies = this.data.movies.concat(data)
       console.log(movies)
@@ -39,6 +40,16 @@ Page({
     console.log(page)
     this.setData({
       start: page + 20
+    })
+    this.loadMovies()
+  },
+
+  goyear (e) {
+    console.log(e)
+    const year = e.currentTarget.dataset.year
+    this.setData({
+      thisYear: year,
+      movies: []
     })
     this.loadMovies()
   },

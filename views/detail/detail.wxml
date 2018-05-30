@@ -1,0 +1,8 @@
+
+<view class='detail'>
+  <view class='videoc'>
+    <view class='video-bg'></view>
+    <view class='video'></view>
+    <view class='bgsjx'></view>
+  </view>
+</view>

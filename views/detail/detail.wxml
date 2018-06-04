@@ -1,8 +1,20 @@
-
+<import src="/components/template/stars.wxml"/>
 <view class='detail'>
   <view class='videoc'>
     <view class='video-bg'></view>
     <view class='video'></view>
     <view class='bgsjx'></view>
+  </view>
+  <view class='detail-content'>
+    <view class='detail-title'>
+      <image class='img' src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg'></image>
+      <view class='detail-detail'>
+        <text class='year'>{{item.genres}}</text>
+        <text class='title'>{{item.title}}</text>
+        <text class='futitle'>{{item.directors[0].name}}</text>
+        <template is="stars" data="{{starScore:item.rating.average}}" />
+        
+      </view>
+    </view>
   </view>
 </view>

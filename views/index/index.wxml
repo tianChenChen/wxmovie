@@ -8,11 +8,11 @@
 
   <view class='home-content'>
     <scroll-view scroll-x class="nav" style="width: 100%" bindscrolltolower="scorllRight">
-      <view class="nav-item {{item == thisYear ? 'active' : ''}}" wx:for="{{year}}" wx:key="index" bindtap="goyear" data-year="{{item}}">{{item}}</view>
+      <view class="nav-item {{item == thisYear ? 'active' : ''}}" wx:for="{{year}}" wx:key="index" bindtap="goyear" data-year="{{item}}" data-index="{{index}}">{{item}}</view>
     </scroll-view>
 
-    <swiper class="tab-content" current="{{thisYear}}" duration="300" bindchange="godeailyear" style="height:100%">
-      <swiper-item wx:for="{{year}}" wx:key="index">
+    <swiper class="tab-content" duration="300" bindchange="godeailyear" style="height:100%">
+      <swiper-item wx:for="{{year}}" wx:key="index" data-swiper="{{item}}">
         <scroll-view scroll-y="true" style='height:100%;' bindscrolltolower="scorllbottom">
           <block>
             <view class='movie-list' wx:for="{{movies}}" wx:key="item.id">

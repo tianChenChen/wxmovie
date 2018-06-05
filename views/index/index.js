@@ -54,8 +54,8 @@ Page({
     this.loadMovies()
   },
 
-  godeailyear () {
-    console.log( '触发')
+  godeailyear (e) {
+    console.log(e, '触发')
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

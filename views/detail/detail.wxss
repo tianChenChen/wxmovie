@@ -44,7 +44,10 @@
   border-radius: 10rpx;
 }
 .detail-detail{
-  width: 380px;
+  width: 380rpx;
+  position: absolute;
+  right:0;
+  top:0;
 }
 .img{
   width:260rpx;
@@ -55,10 +58,41 @@
   margin:0 20rpx;
 }
 .year{
-  width: 315px;
-  height:105px;
-  border-radius: 10px;
+  width: 315rpx;
+  height:105rpx;
+  text-align: center;
+  line-height: 105rpx;
+  border-radius: 10rpx;
   background-color: #fff;
+  display: block;
   position: relative;
   top:-68rpx;
+  right:-40rpx;
+  box-shadow: 2px 5px 5px #999;
+  font-weight: bold;
 }
+.title{
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.futitle{
+  display: block;
+  font-size:28rpx;
+  padding:20rpx 0;
+  color: #666;
+}
+
+.detail-instr{
+  width:100%;
+}
+
+
+.tab-h{
+    height: 80rpx;width: 100%; box-sizing: border-box;overflow: hidden;line-height: 80rpx;background: #F7F7F7; font-size: 16px; white-space: nowrap;}
+.tab-item{margin:0 36rpx;display: inline-block;}
+.tab-item.active{color: #4675F9;position: relative;}
+.tab-item.active:after{ content: "";display: block;height: 8rpx;width: 52rpx;background: #4675F9;position: absolute; bottom: 0;left: 5rpx;border-radius: 16rpx;}
+.item-ans{ width: 100%;display: flex; flex-grow: row no-wrap;justify-content: space-between; padding: 30rpx;box-sizing: border-box; height: 180rpx;align-items: center;border-bottom: 1px solid #F2F2F2;}
+.tab-content{margin-top: 80rpx;}
+.scoll-h{height: 100%;}

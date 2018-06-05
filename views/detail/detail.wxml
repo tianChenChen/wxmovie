@@ -9,12 +9,31 @@
     <view class='detail-title'>
       <image class='img' src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg'></image>
       <view class='detail-detail'>
-        <text class='year'>{{item.genres}}</text>
-        <text class='title'>{{item.title}}</text>
-        <text class='futitle'>{{item.directors[0].name}}</text>
-        <template is="stars" data="{{starScore:item.rating.average}}" />
-        
+        <text class='year'>2017-05-14</text>
+        <text class='title'>电视</text>
+        <text class='futitle'>到两</text>
+        <template is="stars" data="{{starScore:9}}" />
       </view>
+    </view>
+    <view class='detail-instr'>
+      <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">info</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">cast</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">resvies</view>
+        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">awards</view>
+      </scroll-view>
+      <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+     style="height:{{winHeight}}rpx">
+        <swiper-item wx:for="{{[0,1,2,3]}}">
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <block>
+                    <view class="item-ans">
+                        我是一
+                    </view>
+                </block>
+            </scroll-view>
+        </swiper-item>
+      </swiper>
     </view>
   </view>
 </view>

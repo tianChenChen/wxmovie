@@ -1,34 +1,68 @@
 <import src="/components/template/stars.wxml"/>
 <view class='detail'>
   <view class='videoc'>
-    <view class='video-bg'></view>
+    <view class='video-bg' style='background-image: url("{{movie.images.large}}");'></view>
+    <!-- <video class='video' src="{{movie.clip_urls[0]}}"   controls ></video> -->
     <view class='video'></view>
     <view class='bgsjx'></view>
   </view>
   <view class='detail-content'>
-    <view class='detail-title'>
-      <image class='img' src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg'></image>
+    <view class='detail-title' style='height:340rpx;'>
+      <image class='img' src='{{movie.images.small}}'></image>
       <view class='detail-detail'>
-        <text class='year'>2017-05-14</text>
-        <text class='title'>电视</text>
-        <text class='futitle'>到两</text>
-        <template is="stars" data="{{starScore:9}}" />
+        <text class='year'>{{movie.pubdates}}</text>
+        <text class='title'>{{movie.title}}</text>
+        <text class='futitle'>{{movie.directors[0].name}}</text>
+        <template is="stars" data="{{starScore:movie.rating.average}}" />
       </view>
     </view>
     <view class='detail-instr'>
       <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">info</view>
-        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">cast</view>
-        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">resvies</view>
-        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">awards</view>
+        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">简介</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">剧照</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">演员</view>
+        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">评价</view>
       </scroll-view>
       <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
      style="height:{{winHeight}}rpx">
-        <swiper-item wx:for="{{[0,1,2,3]}}">
+        
+        <swiper-item>
             <scroll-view scroll-y="true" class="scoll-h" >
                 <block>
                     <view class="item-ans">
-                        我是一
+                        {{movie.summary}}
+                    </view>
+                </block>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <block>
+                    <view class="item-photos">
+                        <image wx:for="{{movie.photos}}" src='{{item.image}}'></image>
+                    </view>
+                </block>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <block>
+                    <view class="item-yy" wx:for="{{movie.casts}}">
+                      <image class='item-yy-image' src='{{item.avatars.small}}'></image>
+                      <text class='item-yy-text'>{{item.name}}</text>   
+                    </view>
+                </block>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <block>
+                    <view class="item-reviews" wx:for="{{movie.popular_reviews}}">
+                      <image class='item-reviews-image' src='{{item.author.avatar}}'></image>
+                      <view class='item-reviews-content'>
+                        <text class='item-reviews-content-name'>{{item.author.name}}</text>
+                        <text class='item-reviews-content-intr'>{{item.summary}}</text>
+                      </view>
                     </view>
                 </block>
             </scroll-view>

@@ -7,7 +7,6 @@
 .video-bg{
   width:100%;
   height:860rpx;
-  background-image: url("https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg");
   background-position: center 20%;
   background-repeat: no-repeat;
   background-size: 200% 200%;
@@ -39,7 +38,6 @@
   margin-left:4%;
   position: absolute;
   top:370rpx;
-  border: 1px solid red;
   background-color: #fff;
   border-radius: 10rpx;
 }
@@ -70,6 +68,8 @@
   right:-40rpx;
   box-shadow: 2px 5px 5px #999;
   font-weight: bold;
+  font-size:30rpx;
+  overflow: hidden;
 }
 .title{
   display: block;
@@ -89,10 +89,105 @@
 
 
 .tab-h{
-    height: 80rpx;width: 100%; box-sizing: border-box;overflow: hidden;line-height: 80rpx;background: #F7F7F7; font-size: 16px; white-space: nowrap;}
-.tab-item{margin:0 36rpx;display: inline-block;}
-.tab-item.active{color: #4675F9;position: relative;}
-.tab-item.active:after{ content: "";display: block;height: 8rpx;width: 52rpx;background: #4675F9;position: absolute; bottom: 0;left: 5rpx;border-radius: 16rpx;}
-.item-ans{ width: 100%;display: flex; flex-grow: row no-wrap;justify-content: space-between; padding: 30rpx;box-sizing: border-box; height: 180rpx;align-items: center;border-bottom: 1px solid #F2F2F2;}
-.tab-content{margin-top: 80rpx;}
+  height: 80rpx;
+  width: 100%; 
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx; 
+  font-size: 16px; 
+  white-space: nowrap;
+  border-bottom: 5rpx solid #F2F2F2;
+}
+.tab-item{
+  margin:0 36rpx;
+  display: inline-block;
+}
+.tab-item.active{
+  color: #4675F9;
+  position: relative;
+}
+.tab-item.active:after{ 
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 52rpx;
+  background: #4675F9;
+  position: absolute; 
+  bottom: 0;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+.item-ans{ 
+  width: 100%;
+  flex-grow: row no-wrap;
+  justify-content: space-between; 
+  padding:0 30rpx;
+  box-sizing: 
+  border-box; 
+  height: 180rpx;
+  align-items: center;
+  font-size:28rpx;
+  color: #666;
+}
+.item-yy{
+  width:50%;
+  margin-bottom:30rpx;
+  float: left;
+  padding:0 20rpx;
+  box-sizing: border-box;
+}
+.item-yy-image{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.item-yy-text{
+  display: block;
+  padding-left:20rpx;
+  width:160rpx;
+  height:120rpx;
+  line-height: 120rpx;
+  float: left;
+  font-size:25rpx;
+  overflow: hidden;
+}
+
+.item-reviews{
+  width:100%;
+  border-bottom: 1px solid #F2F2F2;
+  overflow: auto;
+  padding-bottom: 30rpx;
+  padding-top:30rpx;
+}
+.item-reviews-image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.item-reviews-content{
+  width:550rpx;
+  float: left;
+  margin-left:20rpx;
+}
+.item-reviews-content-name{
+  font-size:30rpx;
+  display: block;
+  padding:10rpx 0;
+}
+.item-reviews-content-intr{
+  font-size:25rpx;
+  color: #666;
+}
+
+.item-photos{
+  width:100%;
+}
+.item-photos image{
+  width:100%;
+}
+.tab-content{margin-top: 40rpx;}
 .scoll-h{height: 100%;}

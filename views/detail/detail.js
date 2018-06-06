@@ -10,7 +10,9 @@ Page({
       tag: "知名情感博主",
       answer: 134,
       listen: 2234
-    }]
+    }],
+    movie: {},
+    title: ''
   },
   // 滚动切换标签样式
   switchTab: function (e) {
@@ -41,7 +43,7 @@ Page({
       })
     }
   },
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this;
     //  高度自适应
     wx.getSystemInfo({
@@ -56,6 +58,27 @@ Page({
         });
       }
     });
+
+    console.log(options, '获取id')
+    const { id } = options
+    // const id = 1291546
+
+    wx.showLoading({
+      title: '',
+    })
+
+    app.douban.findOne(id)
+      .then(res => {
+        console.log(res)
+        this.setData({ title: res.title, movie: res })
+        wx.setNavigationBarTitle({ title: res.title })
+        wx.hideLoading()
+      })
+      .catch(e => {
+        this.setData({ title: '获取数据异常', movie: {} })
+        console.error(e)
+        wx.hideLoading()
+      })
   },
   footerTap: app.footerTap
 })

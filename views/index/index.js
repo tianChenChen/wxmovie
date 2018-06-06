@@ -9,6 +9,7 @@ Page({
   data: {
     year: [],
     thisYear: 2018,
+    current: 0,
     movies: [],
     start: 0,
     size: 20,
@@ -47,15 +48,25 @@ Page({
   goyear (e) {
     console.log(e)
     const year = e.currentTarget.dataset.year
+    const current = e.currentTarget.dataset.index
     this.setData({
       thisYear: year,
-      movies: []
+      movies: [],
+      current: current
     })
     this.loadMovies()
   },
 
   godeailyear (e) {
-    console.log(e, '触发')
+    console.log(e, '触发', e.detail.current)
+    const touchYear = e.detail.current
+    const currentYear = this.data.thisYear - touchYear
+    this.setData({
+      thisYear: currentYear,
+      movies: [],
+      current: touchYear
+    })
+    this.loadMovies()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

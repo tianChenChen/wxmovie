@@ -2,16 +2,19 @@
 <import src="/components/template/stars.wxml"/>
 
 <view class='home'>
+  <!-- 背景设置 -->
   <view class='homebg01'>
     <view class='homebg02'></view>
   </view>
-
+  <!-- 内容展示 -->
   <view class='home-content'>
     <scroll-view scroll-x class="nav" style="width: 100%" bindscrolltolower="scorllRight">
-      <view class="nav-item {{item == thisYear ? 'active' : ''}}" wx:for="{{year}}" wx:key="index" bindtap="goyear" data-year="{{item}}" data-index="{{index}}">{{item}}</view>
+      <view style='width:450%'>
+        <view class="nav-item {{index == current ? 'active' : ''}}" wx:for="{{year}}" wx:key="index" bindtap="goyear" data-year="{{item}}" data-index="{{index}}">{{item}}</view>
+      </view>
     </scroll-view>
 
-    <swiper class="tab-content" duration="300" bindchange="godeailyear" style="height:100%">
+     <swiper class="tab-content" current='{{current}}' duration="300" bindchange="godeailyear" style="height:100%">
       <swiper-item wx:for="{{year}}" wx:key="index" data-swiper="{{item}}">
         <scroll-view scroll-y="true" style='height:100%;' bindscrolltolower="scorllbottom">
           <block>
@@ -30,8 +33,7 @@
             </view>
           </block>
         </scroll-view>
-      </swiper-item>
-      
-    </swiper>
+      </swiper-item> 
+    </swiper> 
   </view>
 </view>

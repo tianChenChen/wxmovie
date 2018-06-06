@@ -1,9 +1,7 @@
 {
   "pages": [
-    "views/index/index",
-    "views/detail/detail"
-    
-    
+    "views/detail/detail",
+    "views/index/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
